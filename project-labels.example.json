@@ -1,0 +1,6 @@
+{
+  "_comment": "Map raw Claude Code project directory names (as they appear under ~/.claude/projects/) to anonymized public-facing labels. Unmapped projects fall back to 'other'.",
+  "-Users-you-code-my-portfolio-site": "portfolio site",
+  "-Users-you-code-side-project-xyz": "side project",
+  "-Users-you-work-internal-tool": "work tool"
+}

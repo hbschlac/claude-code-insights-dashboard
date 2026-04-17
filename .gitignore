@@ -1,0 +1,5 @@
+claude-code-stats.json
+project-labels.json
+__pycache__/
+*.pyc
+.DS_Store
