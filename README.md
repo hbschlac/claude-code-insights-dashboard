@@ -10,6 +10,7 @@ Parses `~/.claude/projects/**/*.jsonl` (the JSONL transcripts Claude Code writes
 - `insight-detector.py` — **stub**. Emits `suggestions[]` (empty). Intended for v2 pattern mining ("you refactor more than you build", etc.).
 - `project-labels.example.json` — map raw project dir names to anonymized public labels.
 - `next-dashboard-example/page.tsx` — Next.js App Router server component. Copy to `app/claude-code/page.tsx` and drop `claude-code-stats.json` in `public/`.
+- `render_social_image.py` — Renders a 1200×1200 PNG social share card from `claude-code-stats.json`. Requires Pillow (`pip install Pillow`).
 
 ## Quickstart
 
