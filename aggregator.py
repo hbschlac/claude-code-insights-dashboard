@@ -112,9 +112,12 @@ def weeks_in_month(year, month, today):
 
 
 def aggregate(labels_path):
-    with open(labels_path) as fh:
-        label_cfg = json.load(fh)
-    labels = label_cfg["labels"]
+    if labels_path and Path(labels_path).exists():
+        with open(labels_path) as fh:
+            label_cfg = json.load(fh)
+    else:
+        label_cfg = {}
+    labels = label_cfg.get("labels", {})
     default_label = label_cfg.get("default", "other personal project")
 
     files = find_jsonl_files()
@@ -205,7 +208,7 @@ def aggregate(labels_path):
 def main():
     script_dir = Path(__file__).resolve().parent
     ap = argparse.ArgumentParser()
-    ap.add_argument("--output", default=str(HOME / "schlacter-me" / "public" / "claude-code-stats.json"))
+    ap.add_argument("--output", default=str(script_dir / "claude-code-stats.json"))
     ap.add_argument("--labels", default=str(script_dir / "project-labels.json"))
     args = ap.parse_args()
 
